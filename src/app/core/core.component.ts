@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { trigger, transition, style, animate, query, stagger } from '@angular/animations';
 import { HammerModule } from '@angular/platform-browser';
 import { VgApiService, VgCoreModule } from '@videogular/ngx-videogular/core';
@@ -52,7 +52,7 @@ interface Project {
     ])
   ]
 })
-export class CoreComponent {
+export class CoreComponent implements OnDestroy{
   projects: Project[] = [
     { title: 'QR Code Generator', category: 'Angular', date: new Date('2024-08-01'), image: 'AngularImages/QRCodeGenerator/thumb.png', videoSrc: 'AngularImages/QRCodeGenerator/video.mp4' , type: 'Website', link: 'https://github.com/Zanvis/QRCodeGenerator', description: 'This QR Code Generator and Scanner application is a versatile Angular tool that allows users to easily create, scan, and manage QR codes. Key features include QR code generation and downloading, image-based QR code scanning, and a history log for generated and scanned codes. The app supports multiple languages and offers smooth animations for enhanced user experience. It also includes robust error handling and accessibility features, making it a comprehensive solution for all your QR code needs.' },
     { title: 'Collaborative Drawing App', category: 'Angular', date: new Date('2024-08-26'), image: 'AngularImages/DrawingApp/thumb.png', videoSrc: 'AngularImages/DrawingApp/video.mp4', type: 'Website', link: 'https://github.com/Zanvis/DrawingApp', description: 'This project involves the development of a modern and interactive canvas drawing application. The app allows users to create, edit, and navigate through multiple canvas pages, offering functionalities like drawing with custom colors, adjusting brush sizes, undo/redo actions, and toggling between drawing and erasing modes. Users can also upload images to the canvas, change background styles, and export their work as a PNG file.' },
@@ -92,6 +92,10 @@ export class CoreComponent {
   categories: string[] = ['All', 'Angular', 'Python', 'React', 'Java', 'C#', 'Other'];
   isMobileDropdownOpen = false;
   currentSortOrder: 'asc' | 'desc' | null = null;
+  private bodyPosition: string = '';
+  private bodyTop: string = '';
+  private bodyWidth: string = '';
+  private scrollY: number = 0;
   // filterProjects(category: string) {
   //   this.activeCategory = category;
   //   if (category === 'All') {
@@ -120,11 +124,48 @@ export class CoreComponent {
     this.selectedProject = project;
     this.isModalOpen = true;
     this.currentImageIndex = 0;
+    this.disableBodyScroll();
   }
 
   closeModal() {
     this.isModalOpen = false;
+    this.enableBodyScroll();
   }
+
+  private disableBodyScroll(): void {
+    // Store current scroll position
+    this.scrollY = window.scrollY;
+    
+    // Store original styles before modifying
+    this.bodyPosition = document.body.style.position;
+    this.bodyTop = document.body.style.top;
+    this.bodyWidth = document.body.style.width;
+    
+    // Fix the body in place
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${this.scrollY}px`;
+    document.body.style.width = '100%';
+    document.body.style.overflow = 'hidden';
+  }
+
+  private enableBodyScroll(): void {
+    // Restore original body position
+    document.body.style.position = this.bodyPosition || '';
+    document.body.style.top = this.bodyTop || '';
+    document.body.style.width = this.bodyWidth || '';
+    document.body.style.overflow = '';
+    
+    // Scroll back to the original position
+    window.scrollTo(0, this.scrollY);
+  }
+  ngOnDestroy(): void {
+    // Make sure scrolling is enabled when component is destroyed
+    if (this.isModalOpen) {
+      this.enableBodyScroll();
+    }
+    // Your existing destroy logic...
+  }
+
   openLink(link: string) {
     window.open(link, '_blank');
   }
@@ -230,5 +271,20 @@ export class CoreComponent {
   seekForward() {
     const currentTime = this.api.currentTime;
     this.api.seekTime(currentTime + 5);
+  }
+
+  @HostListener('touchmove', ['$event'])
+  onTouchMove(event: TouchEvent): void {
+    if (this.isModalOpen) {
+      // Allow scrolling within the modal content but not the background
+      const target = event.target as HTMLElement;
+      const modalContent = document.querySelector('.overflow-y-auto');
+      
+      // Only prevent default if the touch is outside modal content
+      // or if the modal content is not scrollable
+      if (!modalContent || !modalContent.contains(target)) {
+        event.preventDefault();
+      }
+    }
   }
 }
