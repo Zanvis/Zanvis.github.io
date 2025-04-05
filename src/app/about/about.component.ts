@@ -1,20 +1,19 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { trigger, transition, style, animate, query, stagger } from '@angular/animations';
+import { trigger, transition, style, animate, query, stagger, state } from '@angular/animations';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink],
+  imports: [CommonModule, RouterLink],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
   animations: [
-    trigger('fadeSlideIn', [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(30px)' }),
-        animate('1s ease-out', style({ opacity: 1, transform: 'translateY(0)' })),
-      ]),
+    trigger('imageAnimation', [
+      state('hidden', style({ opacity: 0, transform: 'translateY(30px)' })),
+      state('visible', style({ opacity: 1, transform: 'translateY(0)' })),
+      transition('hidden => visible', animate('1s ease-out'))
     ]),
     trigger('staggerSlideIn', [
       transition(':enter', [
@@ -23,11 +22,11 @@ import { trigger, transition, style, animate, query, stagger } from '@angular/an
           stagger(200, [
             animate('1s cubic-bezier(0.25, 0.8, 0.25, 1)', style({ opacity: 1, transform: 'translateY(0) scale(1)' })),
           ]),
-        ]),
+        ], { optional: true }),
         query('.typing-effect', [
           style({ width: '0ch' }),
           animate('2s steps(20)', style({ width: '8.5ch' })),
-        ]),
+        ], { optional: true }),
       ]),
     ]),
     trigger('slideDown', [
@@ -41,8 +40,13 @@ import { trigger, transition, style, animate, query, stagger } from '@angular/an
     ])
   ]
 })
-export class AboutComponent {
+export class AboutComponent implements AfterViewInit {
+  @ViewChild('preloadImage') preloadImage: ElementRef | undefined;
+  
   showEducation = false;
+  imageLoaded = false;
+  imageState = 'hidden';
+  
   education = [
     { 
       degree: 'Engineer of Computer Science', 
@@ -55,7 +59,27 @@ export class AboutComponent {
       year: '2019 - 2022'
     }
   ];
+  
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.imageLoaded = true;
+      
+      setTimeout(() => {
+        this.imageState = 'visible';
+      }, 50);
+    }, 100);
+  }
+  
   toggleEducation() {
     this.showEducation = !this.showEducation;
+  }
+  
+  onImageLoad() {
+    if (!this.imageLoaded) {
+      this.imageLoaded = true;
+      setTimeout(() => {
+        this.imageState = 'visible';
+      }, 50);
+    }
   }
 }

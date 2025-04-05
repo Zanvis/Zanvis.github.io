@@ -5,7 +5,18 @@
         </h1>
         
         <div class="mt-10 lg:mt-20 lg:flex lg:items-center">
-            <img class="object-cover object-center w-full lg:w-[32rem] rounded-lg h-96 shadow-lg" src="image0.jpeg" alt="Profile Picture" @fadeSlideIn>
+            <div class="profile-image-container w-full lg:w-[32rem] h-96 relative">
+                <img #preloadImage class="hidden" src="image0.jpeg" (load)="onImageLoad()">
+                
+                <div *ngIf="!imageLoaded" class="w-full h-full bg-gray-200 dark:bg-gray-700 rounded-lg shadow-lg flex items-center justify-center">
+                    <svg class="animate-spin h-10 w-10 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                </div>
+                
+                <img *ngIf="imageLoaded" [@imageAnimation]="imageState" class="object-cover object-center w-full h-full rounded-lg shadow-lg absolute top-0 left-0" src="image0.jpeg" alt="Profile Picture">
+            </div>
             <div class="mt-8 lg:px-10 lg:mt-0">
                 <h2 class="text-2xl font-semibold text-gray-800 dark:text-white lg:w-72 stagger-item">
                 Aspiring Full-Stack Developer
