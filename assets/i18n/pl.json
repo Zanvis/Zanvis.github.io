@@ -1,0 +1,239 @@
+{
+    "HEADER": {
+        "ABOUT_ME": "O mnie",
+        "PORTFOLIO": "Portfolio",
+        "CONTACT": "Kontakt",
+        "RESUME": "CV",
+        "RESUME_EN": "Wersja angielska",
+        "RESUME_PL": "Wersja polska",
+        "TOGGLE_DARK": "Przełącz na tryb ciemny",
+        "TOGGLE_LIGHT": "Przełącz na tryb jasny"
+    },
+    "FOOTER": {
+        "GET_IN_TOUCH": "Skontaktuj się",
+        "COPYRIGHT": "© Wszelkie prawa zastrzeżone 2025 Antoni Piwowarski."
+    },
+    "ABOUT": {
+        "TITLE": "O",
+        "TITLE_HIGHLIGHT": "Mnie",
+        "SUBTITLE": "Początkujący Full-Stack Developer",
+        "DESCRIPTION_1": "Cześć! Jestem Antoni Piwowarski, pasjonat informatyki specjalizujący się w technologiach internetowych. Moim celem jest zostanie pełnoprawnym full-stack developerem z doświadczeniem zarówno w frontendzie jak i backendzie. Moje umiejętności obejmują Angular, React, Python, Java, C++ oraz C#.",
+        "DESCRIPTION_2": "Z entuzjazmem podchodzę do tworzenia różnorodnych aplikacji - od webowych i mobilnych po desktopowe. Moim celem jest wykorzystanie szerokiej wiedzy technicznej do budowania innowacyjnych, przyjaznych dla użytkownika rozwiązań, które mają realny wpływ.",
+        "PORTFOLIO_BUTTON": "Zobacz Portfolio",
+        "EDUCATION_BUTTON": "Wykształcenie",
+        "EDUCATION_TITLE": "Wykształcenie",
+        "DEGREES": {
+            "COMPUTER_SCIENCE": "Inżynier Informatyki",
+            "HIGH_SCHOOL": "Świadectwo Dojrzałości"
+        },
+        "SCHOOLS": {
+            "VISTULA": "Akademia Finansów i Biznesu Vistula",
+            "GOETHE": "XLIX Liceum Ogólnokształcące z Oddziałami Dwujęzycznymi im. Johanna Wolfganga Goethego"
+        },
+        "YEARS": {
+            "VISTULA": "2022 - obecnie",
+            "GOETHE": "2019 - 2022"
+        }
+    },
+    "CONTACT": {
+        "TITLE": "Skontaktuj się",
+        "SUBTITLE": "Kontakt",
+        "DESCRIPTION": "Chętnie nawiążę kontakt.",
+        "EMAIL": {
+            "TITLE": "Email",
+            "DESCRIPTION": "Jestem tutaj, aby pomóc.",
+            "VALUE": "aapiwowarski@gmail.com"
+        },
+        "LOCATION": {
+            "TITLE": "Lokalizacja",
+            "DESCRIPTION": "Zapraszam do kontaktu.",
+            "VALUE": "Warszawa, Polska"
+        },
+        "SOCIAL": {
+            "TITLE": "Media Społecznościowe",
+            "DESCRIPTION": "Połącz się ze mną w mediach społecznościowych.",
+            "LINKS": {
+                "LINKEDIN": "Linkedin",
+                "GITHUB": "Github",
+                "INSTAGRAM": "Instagram"
+            }
+        }
+    },
+    "PORTFOLIO": {
+        "TITLE": "Portfolio",
+        "CATEGORIES": {
+            "TITLE": "Rodzaje projektów",
+            "SORT_LABEL": "Sortuj według daty:",
+            "SORT_OLDEST": "Najstarsze",
+            "SORT_NEWEST": "Najnowsze",
+            "All": "Wszystkie",
+            "Angular": "Angular",
+            "React": "React",
+            "Python": "Python",
+            "Java": "Java",
+            "C#": "C#",
+            "Other": "Inne"
+        },
+        "MODAL": {
+            "BUTTONS": {
+                "CLOSE": "Zamknij",
+                "VIEW_PROJECT": "Zobacz projekt"
+            }
+        },
+        "TYPES": {
+            "All": "Wszystkie",
+            "Website": "Strona internetowa",
+            "Mobile app": "Aplikacja mobilna",
+            "Desktop app": "Aplikacja desktopowa",
+            "School project": "Projekt szkolny",
+            "Bot": "Bot"
+        },
+        "PROJECTS": {
+            "1": {
+                "title": "Generator kodów QR",
+                "type": "Strona internetowa",
+                "description": "Aplikacja do generowania i skanowania kodów QR stworzona w Angularze. Umożliwia tworzenie, pobieranie oraz skanowanie kodów QR ze zdjęć. Zawiera historię działań, obsługę wielu języków, animacje poprawiające UX, a także rozbudowane mechanizmy obsługi błędów i dostępności."
+            },
+            "2": {
+                "title": "Aplikacja do wspólnego rysowania",
+                "type": "Strona internetowa",
+                "description": "Nowoczesna aplikacja do rysowania na płótnie, umożliwiająca tworzenie i edycję wielu stron. Oferuje niestandardowe kolory, różne grubości pędzla, cofanie/ponawianie, tryb gumki, dodawanie obrazków i eksport do pliku PNG."
+            },
+            "3": {
+                "title": "Aplikacja kodów pocztowych",
+                "type": "Strona internetowa",
+                "description": "Po wybraniu kraju i wpisaniu kodu pocztowego aplikacja wyświetla informacje o lokalizacji – miasto, stan (jeśli dotyczy) oraz linki do map Google i OpenStreetMap."
+            },
+            "4": {
+                "title": "System rejestracji i logowania",
+                "type": "Strona internetowa",
+                "description": "Aplikacja webowa z rejestracją i logowaniem użytkowników z użyciem tokenów JWT. Frontend stworzony w Angularze i Angular Material, backend w Express.js z bazą danych MongoDB. Obsługuje sesje, rejestrację i bezpieczne logowanie."
+            },
+            "5": {
+                "title": "Bot muzyczny Discord",
+                "type": "Bot",
+                "description": "Bot Discorda napisany w Pythonie umożliwiający odtwarzanie muzyki oraz inne interakcje. Obsługuje kolejkę utworów, polecenia takie jak play, pause, resume, a także zabawne komendy i narzędzia do ankiet, parowania czy żartów."
+            },
+            "6": {
+                "title": "Aplikacja z przepisami",
+                "type": "Aplikacja mobilna",
+                "description": "Aplikacja mobilna stworzona w Ionicu umożliwiająca zarządzanie przepisami. Użytkownicy mogą dodawać zdjęcia, notatki, edytować, kategoryzować i udostępniać przepisy. Intuicyjny i estetyczny interfejs zapewnia wygodną obsługę."
+            },
+            "7": {
+                "title": "Pobieracz YouTube",
+                "type": "Aplikacja desktopowa",
+                "description": "Aplikacja desktopowa w Pythonie pozwalająca pobierać utwory i filmy z YouTube w różnych formatach i jakościach. Wymaga FFmpeg do konwersji plików. Prosty interfejs ułatwia szybkie pobieranie treści."
+            },
+            "8": {
+                "title": "Strona podobna do YouTube",
+                "type": "Projekt szkolny",
+                "description": "Projekt szkolny polegający na stworzeniu strony z funkcjami podobnymi do YouTube. Użytkownicy mogą się logować i przesyłać filmy. Frontend zbudowany w React i Bootstrap, backend w Django z bazą SQL."
+            },
+            "9": {
+                "title": "Out of Office",
+                "type": "Strona internetowa",
+                "description": "Aplikacja do zarządzania pracownikami, stworzona w Angularze i Express.js, z lokalnym serwerem SQL (XAMPP). Umożliwia dodawanie, edycję i filtrowanie danych pracowników, zarządzanie rolami i zgłaszanie wniosków urlopowych."
+            },
+            "10": {
+                "title": "Aplikacja Motto",
+                "type": "Aplikacja mobilna",
+                "description": "Aplikacja mobilna stworzona w Ionicu, prezentująca codziennie nowe motto. Użytkownik może zapisać motto do ulubionych oraz wybrać język angielski lub polski. Prosta forma motywacyjna z przyjaznym UI."
+            },
+            "11": {
+                "title": "Aplikacja do zmiany rozmiaru",
+                "type": "Aplikacja desktopowa",
+                "description": "Aplikacja desktopowa do zmiany rozmiaru obrazów oraz usuwania tła. Umożliwia przeciąganie plików do okna, zachowanie proporcji, pobieranie przetworzonych plików i intuicyjną obsługę."
+            },
+            "12": {
+                "title": "Aplikacja Humor",
+                "type": "Aplikacja mobilna",
+                "description": "Aplikacja mobilna służąca do śledzenia nastroju użytkownika. Pozwala na logowanie codziennego samopoczucia, analizę trendów i korzystanie z interaktywnych wykresów. Zbudowana w Ionicu z Reactem i TypeScript."
+            },
+            "13": {
+                "title": "Licznik słów",
+                "type": "Aplikacja desktopowa",
+                "description": "Prosta aplikacja Java do liczenia słów, znaków oraz znaków bez spacji w podanym tekście. Szybka, efektywna i intuicyjna."
+            },
+            "14": {
+                "title": "Filmweb Scraper",
+                "type": "Aplikacja desktopowa",
+                "description": "Wyszukiwarka filmów na stronie Filmweb. Użytkownik wpisuje tytuł, a aplikacja wyświetla listę pasujących linków. Przejrzysty interfejs z wyszukiwarką i wynikami."
+            },
+            "15": {
+                "title": "Edytor grafiki",
+                "type": "Aplikacja desktopowa",
+                "description": "Edytor graficzny umożliwiający rysowanie linii, prostokątów, kół, wielokątów oraz wypełnianie kształtów. Możliwość dostosowania narzędzi – np. grubości pędzla i gumki. Intuicyjny interfejs."
+            },
+            "16": {
+                "title": "Gra 15",
+                "type": "Aplikacja mobilna",
+                "description": "Gra typu 15 Puzzle napisana w Javie. Gracz przesuwa kafelki, by ułożyć je w odpowiedniej kolejności. Interfejs umożliwia wybór liczby kolumn i wierszy oraz pokazuje wynik i liczbę ruchów."
+            },
+            "17": {
+                "title": "Papier Kamień Nożyce",
+                "type": "Aplikacja desktopowa",
+                "description": "Gra Papier-Kamień-Nożyce z wyborem języka (angielski/polski). Duże, pikselowe grafiki dłoni reprezentują wybór gracza. Aplikacja zlicza punkty i umożliwia reset gry."
+            },
+            "18": {
+                "title": "Aplikacja Transformacji",
+                "type": "Projekt szkolny",
+                "description": "Aplikacja do transformacji geometrycznych figur stworzona w C#. Umożliwia m.in. translację, obrót wokół punktu, skalowanie, odbicia i ścinanie. Interfejs z tabelą współrzędnych i narzędziami do manipulacji."
+            },
+            "19": {
+                "title": "Konwerter masy",
+                "type": "Aplikacja desktopowa",
+                "description": "Aplikacja Java do konwersji jednostek masy: kg, dag, g, lb, oz i st. Prosty i przejrzysty interfejs zapewnia szybkie przeliczanie."
+            },
+            "20": {
+                "title": "Kalkulator",
+                "type": "Aplikacja desktopowa",
+                "description": "Kalkulator stworzony w HTML, JavaScript i CSS. Obsługuje podstawowe działania matematyczne z intuicyjnym interfejsem i czytelnym wyświetlaczem."
+            },
+            "21": {
+                "title": "Gra refleksu",
+                "type": "Aplikacja desktopowa",
+                "description": "Gra Java mierząca czas reakcji użytkownika. Gracz odpowiada na wizualny sygnał, a wynik podawany jest w milisekundach. Prosty, angażujący interfejs motywujący do poprawy refleksu."
+            },
+            "22": {
+                "title": "Animacja",
+                "type": "Aplikacja desktopowa",
+                "description": "Symulator odbijających się kulek napisany w C#. Użytkownik może kontrolować ilość, prędkość oraz pozycję kulek, a także włączać i zatrzymywać animację."
+            },
+            "23": {
+                "title": "Gra Chimp",
+                "type": "Aplikacja desktopowa",
+                "description": "Gra pamięciowa, w której użytkownik musi zapamiętać i wskazać kolejność ukrytych numerów. Możliwość rysowania, ukrywania liczb, ustawienia rozmiaru siatki i wyświetlenia wyniku."
+            },
+            "24": {
+                "title": "Kółko i krzyżyk",
+                "type": "Aplikacja desktopowa",
+                "description": "Gra Tic-Tac-Toe stworzona w Godot. Po wygranej gracza pojawia się komunikat i możliwość rozpoczęcia nowej gry."
+            },
+            "25": {
+                "title": "Prezentacja brył geometrycznych",
+                "type": "Projekt szkolny",
+                "description": "Aplikacja 3D do tworzenia i manipulacji brył geometrycznych, takich jak graniastosłupy i ostrosłupy. Obsługuje m.in. obrót, slajdy, kolorowanie i dostosowywanie parametrów brył. Idealna do nauki geometrii przestrzennej."
+            },
+            "26": {
+                "title": "Analizator szeregów potęgowych",
+                "type": "Projekt szkolny",
+                "description": "Aplikacja C# do analizy i wizualizacji szeregów potęgowych. Umożliwia wprowadzenie zmiennej X, dokładności i zakresu. Wyniki wyświetlane są tabelarycznie i graficznie."
+            },
+            "27": {
+                "title": "Prezentacja figur geometrycznych",
+                "type": "Projekt szkolny",
+                "description": "Projekt prezentujący zasady enkapsulacji, dziedziczenia i polimorfizmu poprzez interaktywne rysowanie i modyfikację figur geometrycznych w C#. Umożliwia cofanie akcji, zmianę kolorów, stylów linii i inne."
+            },
+            "28": {
+                "title": "Rysowanie figur geometrycznych",
+                "type": "Projekt szkolny",
+                "description": "Aplikacja C# do rysowania prostokątów, okręgów, krzywych Beziera, krzywych kardynalnych i innych figur. Użytkownik może wypełniać figury i dostosowywać ich właściwości."
+            },
+            "29": {
+                "title": "Animacja szeregów potęgowych",
+                "type": "Projekt szkolny",
+                "description": "Interaktywna animacja wizualizująca przebieg szeregu potęgowego w formie wykresu i tabeli. Umożliwia płynne śledzenie wartości szeregu na osi X. Stworzona w C# jako narzędzie edukacyjne."
+            }
+        }
+    }
+}
