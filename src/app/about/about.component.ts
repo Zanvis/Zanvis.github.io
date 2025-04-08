@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { trigger, transition, style, animate, query, stagger, state } from '@angular/animations';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, TranslateModule],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
   animations: [
@@ -47,16 +48,18 @@ export class AboutComponent implements AfterViewInit {
   imageLoaded = false;
   imageState = 'hidden';
   
+  constructor(private translate: TranslateService) {}
+
   education = [
     { 
-      degree: 'Engineer of Computer Science', 
-      school: 'Akademia Finansów i Biznesu Vistula', 
-      year: '2022 - present' 
+      degree: this.translate.instant('ABOUT.DEGREES.COMPUTER_SCIENCE'), 
+      school: this.translate.instant('ABOUT.SCHOOLS.VISTULA'), 
+      year: this.translate.instant('ABOUT.YEARS.VISTULA') 
     },
     {
-      degree: 'High School Diploma',
-      school: 'XLIX Liceum Ogólnokształcące z Oddziałami Dwujęzycznymi im. Johanna Wolfganga Goethego',
-      year: '2019 - 2022'
+      degree: this.translate.instant('ABOUT.DEGREES.HIGH_SCHOOL'),
+      school: this.translate.instant('ABOUT.SCHOOLS.GOETHE'),
+      year: this.translate.instant('ABOUT.YEARS.GOETHE')
     }
   ];
   

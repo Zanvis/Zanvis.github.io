@@ -1,7 +1,7 @@
 <section class="bg-gradient-to-r from-gray-50 via-blue-50 to-blue-100 dark:from-gray-700 dark:via-gray-800 dark:to-gray-900 lg:min-h-[calc(100vh-16rem)] flex items-center justify-end">
     <div @staggerSlideIn class="container flex flex-col justify-center w-full px-6 py-10 mx-auto lg:w-1/2 move-center">
         <h1 class="text-2xl font-semibold text-gray-700 capitalize lg:text-3xl dark:text-white stagger-item typing-effect">
-            <span class="text-blue-500 dark:text-blue-500">About</span> Me
+            <span class="text-blue-500 dark:text-blue-500">{{ 'ABOUT.TITLE' | translate }}</span> {{ 'ABOUT.TITLE_HIGHLIGHT' | translate }}
         </h1>
         
         <div class="mt-10 lg:mt-20 lg:flex lg:items-center">
@@ -19,27 +19,27 @@
             </div>
             <div class="mt-8 lg:px-10 lg:mt-0">
                 <h2 class="text-2xl font-semibold text-gray-800 dark:text-white lg:w-72 stagger-item">
-                Aspiring Full-Stack Developer
+                {{ 'ABOUT.SUBTITLE' | translate }}
                 </h2>
 
                 <p class="max-w-lg mt-6 text-gray-700 dark:text-gray-400 stagger-item">
-                Hello! I'm Antoni Piwowarski, a passionate Computer Science student specializing in Web Technologies. I'm on a journey to become a full-stack developer, with experience in both frontend and backend technologies. My skillset includes Angular, React, Python, Java, C++, and C#.
+                {{ 'ABOUT.DESCRIPTION_1' | translate }}
                 </p>
 
                 <p class="max-w-lg mt-4 text-gray-700 dark:text-gray-400 stagger-item">
-                I'm enthusiastic about creating diverse applications, from web and mobile apps to desktop software. My goal is to leverage my broad technical knowledge to build innovative, user-friendly solutions that make a real impact.
+                {{ 'ABOUT.DESCRIPTION_2' | translate }}
                 </p>
 
                 <div class="mt-6 flex items-center space-x-4 stagger-item">
                     <button routerLink="/portfolio" class="hover-scale inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 dark:focus:ring-offset-gray-800 shadow-md">
-                        View My Portfolio
+                        {{ 'ABOUT.PORTFOLIO_BUTTON' | translate }}
                         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                         </svg>
                     </button>
                     
                     <button (click)="toggleEducation()" class="text-blue-500 hover:text-blue-600 inline-flex items-center px-4 py-2 text-sm font-medium border border-blue-500 rounded-lg hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 dark:focus:ring-offset-gray-800 shadow-md">
-                        View Education
+                        {{ 'ABOUT.EDUCATION_BUTTON' | translate }}
                         <svg [class.rotate-180]="showEducation" class="w-4 h-4 ml-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
@@ -48,7 +48,7 @@
             </div>
         </div>
         <div *ngIf="showEducation" @slideDown class="mt-4 bg-gray-50 dark:bg-gray-800 rounded-lg p-4 shadow-md">
-            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-4 text-center">Education</h3>
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-4 text-center">{{ 'ABOUT.EDUCATION_TITLE' | translate }}</h3>
             <div *ngFor="let edu of education" class="mb-4">
                 <h4 class="text-lg font-medium text-gray-800 dark:text-white text-center">{{edu.degree}}</h4>
                 <p class="text-gray-600 dark:text-gray-400 text-center">{{edu.school}}</p>

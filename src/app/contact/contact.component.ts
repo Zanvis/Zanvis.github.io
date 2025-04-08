@@ -1,10 +1,11 @@
 import { AfterViewInit, Component, Renderer2 } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
   animations: [
